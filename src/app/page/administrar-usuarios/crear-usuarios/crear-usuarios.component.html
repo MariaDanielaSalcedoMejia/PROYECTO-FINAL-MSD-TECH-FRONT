@@ -1,0 +1,56 @@
+
+
+<div class="form-container">
+  <h1 class="text-center">Crear Usuario</h1>
+  <form [formGroup]="usuariosForm" (ngSubmit)="crearUsuario()">
+    <div class="mb-3">
+      <label class="form-label">Nombre</label>
+      <input type="text" class="form-control" formControlName="nombre" placeholder="Ingrese su nombre" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Correo Electrónico</label>
+      <input type="email" class="form-control" formControlName="email" placeholder="nombre@ejemplo.com" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Tipo de Documento</label>
+      <select class="form-select" formControlName="tipoDocumento">
+        <option value="" disabled selected>Seleccione un tipo de documento</option>
+        <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+        <option value="Cédula de Extranjería">Cédula de Extranjería</option>
+        <option value="Pasaporte">Pasaporte</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Número de Documento</label>
+      <input type="text" class="form-control" formControlName="numeroDocumento" placeholder="Ingrese su número de documento" />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Número de Celular</label>
+      <input type="number" class="form-control" formControlName="numeroCelular" placeholder="Ingrese su número de Celular" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Rol</label>
+      <select class="form-select" formControlName="rol">
+        <option value="" disabled selected>Seleccione un rol</option>
+        <option value="USER">Usuario</option>
+        <option value="ADMIN">Administrador</option>
+      </select>
+    </div>
+
+
+
+
+    <div class="mb-3">
+      <label class="form-label">password</label>
+      <input type="text" class="form-control" formControlName="password" />
+    </div>
+    <div class="button-container">
+    <button type="submit" class="text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-bold rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">Crear Usuario</button>
+</div>
+  </form>
+</div>
+

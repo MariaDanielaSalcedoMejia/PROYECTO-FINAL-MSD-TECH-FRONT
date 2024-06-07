@@ -1,0 +1,47 @@
+
+.titulo{
+  margin-top: 5%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.size{
+  font-size: 35px;
+}
+
+.button-with-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.button-with-image img {
+  width: 25px;
+  height: auto;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+.color-titulos {
+  background-color: hsl(256, 90%, 45%);
+}
+.color-tabla{
+  background-color: #ffffff;
+}
+.color-botones{
+  background-color: #ffffff;
+}
+.table-container {
+  background-color: rgba(255, 255, 255, 0);
+border-color: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+
+
+
+}

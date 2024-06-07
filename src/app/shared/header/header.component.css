@@ -1,0 +1,19 @@
+.Header {
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+.sidebar {
+  margin-top: 70px;
+  background-color: black;
+}
+.logo {
+  border-radius: 60%;
+  width: 80%;
+}
+.sidebar ul li {
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
