@@ -8,7 +8,6 @@ import { UsuariosService } from '../../../services/usuarios/usuarios.service';
 import { Router } from '@angular/router';
 import { PATH } from '../../../core/enum/path.enum';
 
-
 @Component({
   selector: 'app-usuarios',
   standalone: true,
@@ -18,18 +17,24 @@ import { PATH } from '../../../core/enum/path.enum';
 })
 export class UsuariosComponent implements OnInit, OnDestroy {
   usuarios: UsuarioModel[] = [];
-  columnas: string[] = [];
+  columnas: string[] =  [
+    'nombre',
+    'email',
+    'tipoDocumento',
+    'numeroDocumento',
+    'numeroCelular',
+    'rol',
+  ];
   informacion!: UsuarioModel;
   usuariosResolver: any;
   usuarioSubscription!: Subscription;
-  cargando:boolean=true;
+  cargando: boolean = true;
 
   private usuarioService = inject(UsuariosService);
   private router = inject(Router);
 
   ngOnInit(): void {
     this.cargarUsuarios();
-
   }
 
   ngOnDestroy(): void {
@@ -41,17 +46,12 @@ export class UsuariosComponent implements OnInit, OnDestroy {
       .getUsuarios()
       .subscribe((resp: any) => {
         this.usuarios = resp.usuarios;
-        this.cargando=false;
-        this.obtenerColumnas(this.usuarios);
+        this.cargando = false;
+        this.columnas;
       });
-
   }
 
-  obtenerColumnas(usuarios: UsuarioModel[]) {
-    if (usuarios.length > 0) {
-      this.columnas = Object.keys(usuarios[0]);
-    }
-  }
+
 
   recibirInformacion(data: UsuarioModel) {
     this.informacion = data;

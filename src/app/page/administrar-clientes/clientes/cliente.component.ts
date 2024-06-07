@@ -21,7 +21,12 @@ export class clienteComponent implements OnInit {
   clientes: clienteInterface[] = [];
   clienteResolver: any;
   tituloTabla: string = 'Lista de clientes';
-  columnas: string[] = [];
+  columnas: string[] = [
+    'nombre',
+    'email',
+    'numeroCelular',
+    'direccion'
+  ];
   informacion!: ClienteModel | undefined;
   private router = inject(Router);
   private activatedRoute = inject(ActivatedRoute);
@@ -42,7 +47,7 @@ export class clienteComponent implements OnInit {
   ngOnInit(): void {
     this.clienteservice.getClientes().subscribe((resp: any) => {
       this.clientes = resp.clientes;
-      this.obtenerColumnas(this.clientes);
+      this.columnas;
 
 
     });
@@ -56,14 +61,10 @@ export class clienteComponent implements OnInit {
       .getClientes()
       .subscribe((resp: any) => {
         this.clientes = resp.clientes;
-        this.obtenerColumnas(this.clientes);
+        this.columnas;
       });
   }
-  obtenerColumnas(clientes: clienteInterface[]) {
-    if (this.clientes.length > 0) {
-      this.columnas = Object.keys(clientes[0]);
-    }
-  }
+
   recibirInformacion(data: ClienteModel) {
     this.informacion = data;
     Swal.fire({

@@ -19,7 +19,11 @@ export class leadsComponent implements OnInit, OnDestroy {
 
   leads: LeadModel[] = [];
   tituloTabla: string = 'Lista de leads';
-  columnas: string[] = [];
+  columnas: string[] = [
+    'cliente',
+    'descripcion',
+    'estado'
+  ];
   informacion!: LeadModel;
 
   leadsubscription!: Subscription;
@@ -44,15 +48,11 @@ export class leadsComponent implements OnInit, OnDestroy {
       .getLeads()
       .subscribe((resp: any) => {
         this.leads = resp.leads;
-        this.obtenerColumnas(this.leads);
+        this.columnas;
       });
   }
 
-  obtenerColumnas(leads: LeadModel[]) {
-    if (leads.length > 0) {
-      this.columnas = Object.keys(leads[0]);
-    }
-  }
+
   recibirInformacion(data: LeadModel) {
     this.informacion = data;
     Swal.fire({

@@ -20,7 +20,13 @@ import { interaccionInterface } from '../../../core/interface/interacciones.inte
 export class InteraccionesComponent implements OnInit, OnDestroy {
   interaccion: interaccionInterface[] = [];
   tituloTabla: string = 'Lista de interacciones';
-  columnas: string[] = [];
+  columnas: string[] = [
+    'cliente',
+    'llamadas',
+    'correos',
+    'reuniones',
+    'comentarios'
+  ];
   interacciones: interaccionInterface[] = [];
   informacion!: InteraccionModel;
   private router = inject(Router);
@@ -32,9 +38,8 @@ export class InteraccionesComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.interaccionService.getInteracciones().subscribe((resp: any) => {
       this.interaccion = resp.interaccion;
-      this.obtenerColumnas(this.interaccion);
+      this.columnas;
 
-      console.log(resp.interaccion);
     });
   }
   ngOnDestroy(): void {
