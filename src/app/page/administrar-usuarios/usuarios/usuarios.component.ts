@@ -7,11 +7,12 @@ import { UsuarioModel } from '../../../core/models/usuario.model';
 import { UsuariosService } from '../../../services/usuarios/usuarios.service';
 import { Router } from '@angular/router';
 import { PATH } from '../../../core/enum/path.enum';
+import { RolDirective } from '../../../core/directives/rol/rol.directive';
 
 @Component({
   selector: 'app-usuarios',
   standalone: true,
-  imports: [TablaComponent],
+  imports: [TablaComponent,RolDirective],
   templateUrl: './usuarios.component.html',
   styleUrl: './usuarios.component.css',
 })

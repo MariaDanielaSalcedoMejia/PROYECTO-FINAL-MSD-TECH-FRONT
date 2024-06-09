@@ -12,6 +12,7 @@ import { CrearInteraccionesComponent } from './page/administrar-interacciones/cr
 import { CrearLeadsComponent } from './page/administrar-leads/crear-leads/crear-leads.component';
 import { usuariosResolver } from './core/resolvers/usuarios/usuarios.resolver';
 import { authGuard } from './core/guards/auth/auth.guard';
+import { usuarioGuard } from './core/guards/usuarios/usuario.guard';
 
 export const routes: Routes = [
   {
@@ -38,7 +39,7 @@ export const routes: Routes = [
       {
         path: PATH.USUARIO,
         title: 'Usuarios',
-        canActivate: [authGuard],
+        canActivate: [usuarioGuard],
         component: UsuariosComponent,
       },
       {
@@ -68,7 +69,7 @@ export const routes: Routes = [
       {
         path: `${PATH.CREAR_USUARIOS}/:id`,
         title: 'Crear Usuarios',
-        canActivate: [authGuard],
+        canActivate: [usuarioGuard],
         component: CrearUsuariosComponent,
         resolve: {
           usuarios: usuariosResolver,

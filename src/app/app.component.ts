@@ -5,6 +5,7 @@ import { clienteComponent } from './page/administrar-clientes/clientes/cliente.c
 import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { CommonModule } from '@angular/common';
+import { RolDirective } from './core/directives/rol/rol.directive';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ import { CommonModule } from '@angular/common';
     clienteComponent,
     HeaderComponent,
     FooterComponent,
+    RolDirective,
 
   ],
 })

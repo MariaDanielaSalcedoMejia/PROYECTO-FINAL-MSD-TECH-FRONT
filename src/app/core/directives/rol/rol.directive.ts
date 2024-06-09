@@ -46,7 +46,7 @@ export class RolDirective implements OnInit {
 
     if (this.usuario && this.usuario.rol) {
       for (let [index, rol] of this.roles.entries()) {
-        if (this.usuario.rol.toUpperCase() === rol) {
+        if (this.usuario.rol.toUpperCase() === rol ) {
           tieneRoles = true;
           return tieneRoles;
         }

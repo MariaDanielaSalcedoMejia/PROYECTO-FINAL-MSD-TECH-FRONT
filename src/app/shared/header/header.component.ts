@@ -4,12 +4,13 @@ import { RouterLink } from '@angular/router';
 import { MenuInfoInterface } from '../../core/interface/menu_info.interface';
 import { MenuRoutes } from '../../menu/menu';
 import { NgClass, NgIf } from '@angular/common';
+import { LoginComponent } from '../../auth/login/login.component';
 
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, NgIf, NgClass],
+  imports: [RouterLink, NgIf, NgClass, LoginComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
@@ -26,7 +27,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.menuItems = MenuRoutes;
-    console.log(this.menuItems);
+
   }
 
   onMouseEnter() {
@@ -40,3 +41,4 @@ export class HeaderComponent implements OnInit {
     this.usuarioServices.logout();
   }
 }
+

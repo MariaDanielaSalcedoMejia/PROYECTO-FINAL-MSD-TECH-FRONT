@@ -7,8 +7,9 @@
   "
 >
   <div style="color: rgb(103, 154, 204); margin-top: 100px ">
-    <h4 style="color: rgb(241, 234, 234)">Cargando...</h4>
+
     @if(cargando){
+         <h4 style="color: rgb(241, 234, 234)">Cargando...</h4>
 
     <div role="status">
       <svg
@@ -48,6 +49,7 @@
       class="size text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-bold rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900"
       style="margin-top: 10px"
       (click)="irAcrearUsuarios()"
+      *appRol="['ADMIN']"
     >
       Crear usuarios
     </button>
