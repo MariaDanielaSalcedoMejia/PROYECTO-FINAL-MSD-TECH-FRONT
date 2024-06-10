@@ -50,10 +50,10 @@ interaccionForm!: FormGroup;
   crearFormulario() {
     this.interaccionForm = this.formBuilder.group({
       cliente: ['', [Validators.required]],
-      llamadas: ['', [Validators.required]],
-      correos: ['', [Validators.required]],
-      reuniones: ['', [Validators.required]],
-      comentarios: ['', [Validators.required]],
+      llamadas: [null ],
+      correos: [null ],
+      reuniones: [null ],
+      comentarios: ['' ],
 
     });
   }

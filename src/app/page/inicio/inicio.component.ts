@@ -22,43 +22,6 @@ export class InicioComponent {
     });
   }
 
-  clientes = [
-    {
-      nombre: 'Walter',
-      apellido: 'Gomez',
-      edad: 14,
-      ciudad: 'Bogotá',
-      documento: 154875,
-    },
-    {
-      nombre: 'Ana',
-      apellido: 'Martinez',
-      edad: 25,
-      ciudad: 'Medellín',
-      documento: 258963,
-    },
-    {
-      nombre: 'Juan',
-      apellido: 'Perez',
-      edad: 35,
-      ciudad: 'Cali',
-      documento: 369852,
-    },
-    {
-      nombre: 'Maria',
-      apellido: 'Rodriguez',
-      edad: 20,
-      ciudad: 'Barranquilla',
-      documento: 741852,
-    },
-    {
-      nombre: 'Luisa',
-      apellido: 'Lopez',
-      edad: 45,
-      ciudad: 'Cartagena',
-      documento: 963258,
-    },
-  ];
 
   cambioArticulo() {
     this.router.navigateByUrl('/articulo');
