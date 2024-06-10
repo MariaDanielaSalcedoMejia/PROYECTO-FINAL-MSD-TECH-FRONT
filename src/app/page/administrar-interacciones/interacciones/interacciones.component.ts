@@ -50,7 +50,7 @@ export class InteraccionesComponent implements OnInit, OnDestroy {
       .getInteracciones()
       .subscribe((resp: any) => {
         this.interaccion = resp.interaccion;
-        this.obtenerColumnas(this.interaccion);
+        this.columnas;
       });
     }
   obtenerColumnas(interacciones: interaccionInterface[]) {
