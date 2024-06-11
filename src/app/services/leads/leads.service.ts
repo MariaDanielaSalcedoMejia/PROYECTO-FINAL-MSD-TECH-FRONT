@@ -85,7 +85,7 @@ export class LeadsService {
   actualizarLead(lead: LeadModel) {
     return this.httpClient.put(
       `${base_url}/lead/${lead._id}`,
-      this.lead,
+      lead,
       this.headers
     );
   }

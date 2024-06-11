@@ -21,7 +21,7 @@ import { LeadsService } from '../../../services/leads/leads.service';
   styleUrls: ['./crear-leads.component.css'],
 })
 export class CrearLeadsComponent implements OnInit, OnDestroy {
-leadsForm!: FormGroup;
+  leadsForm!: FormGroup;
   leadsSubscription!: Subscription;
   leadSeleccionado!: LeadModel;
 
@@ -50,8 +50,6 @@ leadsForm!: FormGroup;
       cliente: ['', [Validators.required]],
       descripcion: ['', [Validators.required]],
       estado: ['', [Validators.required]],
-
-
     });
   }
 
@@ -59,20 +57,11 @@ leadsForm!: FormGroup;
     if (lead !== 'nuevo') {
       this.leadsSubscription = this.leadsService.getUnlead(lead).subscribe({
         next: (res: any) => {
-          const {
-            cliente,
-            descripcion,
-            estado,
-          } = res.lead;
+          const { cliente, descripcion, estado } = res.lead;
 
           this.leadSeleccionado = res.lead;
 
-
-          Swal.fire(
-            'Lead',
-            `Se encontró el lead ${res.lead.cliente}`,
-            'info'
-          );
+          Swal.fire('Lead', `Se encontró el lead ${res.lead.cliente}`, 'info');
 
           this.leadsForm.patchValue({
             cliente,
@@ -96,22 +85,18 @@ leadsForm!: FormGroup;
 
     const data = this.leadsForm.value;
     const leadNuevo: crearLeadsInterface = {
-      cliente:data.cliente,
+      cliente: data.cliente,
       descripcion: data.descripcion,
-      estado:data.estado,
+      estado: data.estado,
     };
-
 
     if (this.leadSeleccionado) {
       this.actualizarLead(leadNuevo);
-
-
     } else {
       this.leadsService.crearUnLead(leadNuevo).subscribe({
         next: (res: any) => {
-
           Swal.fire(
-             'lead',
+            'lead',
             `El lead  del cliente ${data.cliente} ha sido creada con éxito`,
             'success'
           );
@@ -131,9 +116,10 @@ leadsForm!: FormGroup;
   actualizarLead(leads: crearLeadsInterface) {
     const leadActualizar: LeadModel = {
       _id: this.leadSeleccionado._id,
-      cliente:leads.cliente,
-      descripcion:leads.descripcion,
-      estado:leads.estado
+      cliente: leads.cliente,
+      descripcion: leads.descripcion,
+      estado: leads.estado,
+
     };
     console.log(leadActualizar);
 
