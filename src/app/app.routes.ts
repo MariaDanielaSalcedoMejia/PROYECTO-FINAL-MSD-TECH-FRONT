@@ -59,6 +59,9 @@ export const routes: Routes = [
         title: 'Crear clientes',
         canActivate: [authGuard],
         component: CrearclientesComponent,
+        resolve: {
+          usuarios: usuariosResolver,
+        },
       },
       {
         path: PATH.ACTUALIZAR_CLIENTES,
